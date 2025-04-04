@@ -6,7 +6,6 @@ import os
 import requests
 
 DEBUG = os.environ.get("DEBUG", "false")
-TEST = os.environ.get("DEBUG", "false")
 if DEBUG.lower() == "true":
     logging.basicConfig(level=logging.DEBUG)
 
@@ -23,7 +22,6 @@ class JSONEncoder(json.JSONEncoder):
 
 
 async def format_as_ndjson(r):
-    # test comment
     try:
         async for event in r:
             yield json.dumps(event, cls=JSONEncoder) + "\n"
