@@ -56,7 +56,7 @@ jobs:
       API_APP_URL: ${{ steps.get_output_windows.outputs.API_APP_URL }}
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Configure Parameters Based on WAF Setting
         shell: bash
